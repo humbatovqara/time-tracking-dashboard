@@ -1,3 +1,4 @@
+/* Rubik Font - 300, 400, 500 */
 @import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap");
 * {
   margin: 0;
@@ -112,5 +113,53 @@ a {
 
 .nav .map .list__link:hover {
   color: #fff;
+}
+
+.menu {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (1fr)[3];
+      grid-template-columns: repeat(3, 1fr);
+  -ms-grid-rows: (1fr)[2];
+      grid-template-rows: repeat(2, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 0px;
+}
+
+.menu__work {
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 1;
+  -ms-grid-column: 1;
+  -ms-grid-column-span: 1;
+  grid-area: 1 / 1 / 2 / 2;
+  padding: 25px 25px 30px 25px;
+  color: #fff;
+  background-color: #1c1f4a;
+  border-radius: 10px;
+}
+
+.menu__title {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.menu__name {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.menu__hour {
+  margin: 20px 0px 10px 0;
+  font-size: 48px;
+  font-weight: 300;
+}
+
+.menu__last {
+  color: rgba(236, 236, 236, 0.6);
+  font-size: 13px;
 }
 /*# sourceMappingURL=style.css.map */

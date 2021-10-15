@@ -1,18 +1,83 @@
-#dashboard {
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+.main {
+    &__container {
+        // padding: 0 100px;
+        margin: auto;
 
-    margin: 0 100px;
-    width: 100%;
+        width: 100%;
+        max-width: 1240px;
+        height: 100vh;
 
-    #nav-container {
-        width: 30%;
-        background-color: red;
+        background-color: hsl(226, 43%, 10%);
+        display: flex;
+        flex-wrap: wrap;
+        // justify-content: center;
+        align-items: center;
     }
 
-    #menu-container {
-        width: 70%;
-        background-color: #fff;
+    &__row {
+        width: 100%;
+        display: flex;
+
+        .nav__column {
+            margin-right: 20px;
+            display: flex;
+            flex: 30%;
+            justify-content: flex-end;
+        }
+
+        .menu__column {
+            flex: 70%;
+        }
+    }
+}
+
+.nav {
+    border-radius: 10px;
+    background-color: hsl(235, 46%, 20%);
+
+    .profile {
+        padding: 30px 0px 70px 25px;
+        border-radius: 10px;
+        background-color: hsl(246, 80%, 60%);
+
+        &__img {
+            width: 65px;
+            height: 65px;
+            border: 3px solid #fff;
+            border-radius: 50%;
+        }
+
+        &__title {
+            color: #fff;
+            width: 200px;
+            margin-top: 25px;
+
+            &--small {
+                color: #b4b4b4;
+            }
+        }
+
+        &__name {
+            font-weight: 300;
+        }
+    }
+
+    .map {
+        padding: 25px 25px 10px 25px;
+
+        .list {
+            &__item {
+                margin-bottom: 15px;
+            }
+
+            &__link {
+                color: rgba(236, 236, 236, 0.4);
+                transition: all ease .5s;
+
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
     }
 }

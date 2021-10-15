@@ -225,4 +225,63 @@ a {
   color: rgba(236, 236, 236, 0.6);
   font-size: 13px;
 }
+
+@media only screen and (max-width: 375px) {
+  .main__container {
+    height: 100%;
+  }
+  .main__row {
+    padding: 20px;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .nav {
+    margin-bottom: 1rem;
+  }
+  .nav__column {
+    margin-right: 0 !important;
+    display: block !important;
+  }
+  .nav .profile {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    padding: 20px;
+  }
+  .nav .profile__title {
+    width: 100%;
+    margin: 0 0 0 20px;
+  }
+  .nav .profile__name {
+    font-size: 1.5rem;
+  }
+  .map .list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  .menu__body {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .menu__hour {
+    font-size: 2rem;
+    margin: 10px 0 0 0;
+  }
+}
 /*# sourceMappingURL=style.css.map */

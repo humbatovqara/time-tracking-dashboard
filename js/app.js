@@ -52,14 +52,17 @@ function getTitle() {
     xhr.open("GET", "js/data.json", true);
 
     xhr.onload = function () {
-        let titles = document.querySelectorAll(".menu__name")[0];
+        let titles = document.querySelectorAll(".menu__name");
 
 
         if (this.status == 200) {
             const times = JSON.parse(this.responseText);
 
             times.forEach(function (time) {
-                titles.innerHTML = time.title;
+                titles.forEach(function (title) {
+                    title.innerHTML = time.title
+                })
+                // titles.innerHTML = time.title;
             })
         }
     }

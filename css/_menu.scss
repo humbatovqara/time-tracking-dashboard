@@ -1,18 +1,82 @@
 .menu {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: 1rem 2rem;
+    color: #fff;
+
+    &__work, &__play,  &__study, &__exercise, &__social, &__selfCare {
+        border-radius: 10px;
+    }
 
     &__work {
-        grid-area: 1 / 1 / 2 / 2;
+        background-color: $light-red-work;
 
-        padding: 25px 25px 30px 25px;
+        .menu__cover {
+            background-image: url(../img/icon-work.svg);
+        }
+    }
 
-        color: #fff;
+    &__play {
+        background-color: $soft-blue;
+
+        .menu__cover {
+            background-image: url(../img/icon-play.svg);
+        }
+    }
+
+    &__study {
+        background-color: $light-red-study;
+
+        .menu__cover {
+            background-image: url(../img/icon-study.svg);
+        }
+    }
+
+    &__exercise {
+        background-color: $lime-green;
+
+        .menu__cover {
+            background-image: url(../img/icon-exercise.svg);
+        }
+    }
+
+    &__social {
+        background-color: $violet-social;
+
+        .menu__cover {
+            background-image: url(../img/icon-social.svg);
+        }
+    }
+
+    &__selfCare {
+        background-color: $soft-orange;
+
+        .menu__cover {
+            background-image: url(../img/icon-self-care.svg);
+        }
+    }
+
+    &__cover {
+        width: 100%;
+        height: 40px;
+        background-repeat: no-repeat;
+        background-position: bottom 60% right 10%;
+        background-size: 25%;
+    }
+
+    &__content {
         background-color: hsl(235, 46%, 20%);
-        border-radius: 10px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+        border-bottom-left-radius: 7px;
+        border-bottom-right-radius: 7px;
+        padding: 25px 25px 30px 25px;
+        transition: all ease .5s;
+
+        &:hover {
+            cursor: pointer;
+            background-color: hsl(235, 45%, 61%);
+        }
     }
 
     &__title {

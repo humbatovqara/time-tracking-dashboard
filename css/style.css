@@ -23,10 +23,11 @@ a {
   text-decoration: none;
 }
 
+/* Colors */
 .main__container {
   margin: auto;
   width: 100%;
-  max-width: 1240px;
+  max-width: 1140px;
   height: 100vh;
   background-color: #0f1424;
   display: -webkit-box;
@@ -47,22 +48,22 @@ a {
 }
 
 .main__row .nav__column {
-  margin-right: 20px;
+  margin-right: 2rem;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-flex: 30%;
-      -ms-flex: 30%;
-          flex: 30%;
+  -webkit-box-flex: 20%;
+      -ms-flex: 20%;
+          flex: 20%;
   -webkit-box-pack: end;
       -ms-flex-pack: end;
           justify-content: flex-end;
 }
 
 .main__row .menu__column {
-  -webkit-box-flex: 70%;
-      -ms-flex: 70%;
-          flex: 70%;
+  -webkit-box-flex: 80%;
+      -ms-flex: 80%;
+          flex: 80%;
 }
 
 .nav {
@@ -118,24 +119,86 @@ a {
 .menu {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: (1fr)[3];
-      grid-template-columns: repeat(3, 1fr);
-  -ms-grid-rows: (1fr)[2];
-      grid-template-rows: repeat(2, 1fr);
-  grid-column-gap: 0px;
-  grid-row-gap: 0px;
+  -ms-grid-columns: (minmax(15rem, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  grid-gap: 1rem 2rem;
+  color: #fff;
+}
+
+.menu__work, .menu__play, .menu__study, .menu__exercise, .menu__social, .menu__selfCare {
+  border-radius: 10px;
 }
 
 .menu__work {
-  -ms-grid-row: 1;
-  -ms-grid-row-span: 1;
-  -ms-grid-column: 1;
-  -ms-grid-column-span: 1;
-  grid-area: 1 / 1 / 2 / 2;
-  padding: 25px 25px 30px 25px;
-  color: #fff;
+  background-color: #ff8c66;
+}
+
+.menu__work .menu__cover {
+  background-image: url(../img/icon-work.svg);
+}
+
+.menu__play {
+  background-color: #56c2e6;
+}
+
+.menu__play .menu__cover {
+  background-image: url(../img/icon-play.svg);
+}
+
+.menu__study {
+  background-color: #ff5c7c;
+}
+
+.menu__study .menu__cover {
+  background-image: url(../img/icon-study.svg);
+}
+
+.menu__exercise {
+  background-color: #4acf81;
+}
+
+.menu__exercise .menu__cover {
+  background-image: url(../img/icon-exercise.svg);
+}
+
+.menu__social {
+  background-color: #7536d3;
+}
+
+.menu__social .menu__cover {
+  background-image: url(../img/icon-social.svg);
+}
+
+.menu__selfCare {
+  background-color: #f1c65b;
+}
+
+.menu__selfCare .menu__cover {
+  background-image: url(../img/icon-self-care.svg);
+}
+
+.menu__cover {
+  width: 100%;
+  height: 40px;
+  background-repeat: no-repeat;
+  background-position: bottom 60% right 10%;
+  background-size: 25%;
+}
+
+.menu__content {
   background-color: #1c1f4a;
-  border-radius: 10px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 25px 25px 30px 25px;
+  -webkit-transition: all ease .5s;
+  transition: all ease .5s;
+}
+
+.menu__content:hover {
+  cursor: pointer;
+  background-color: #6f76c8;
 }
 
 .menu__title {

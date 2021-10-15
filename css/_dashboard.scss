@@ -1,16 +1,13 @@
 .main {
     &__container {
-        // padding: 0 100px;
         margin: auto;
-
         width: 100%;
-        max-width: 1240px;
+        max-width: 1140px;
         height: 100vh;
 
-        background-color: hsl(226, 43%, 10%);
+        background-color: $very-dark-blue;
         display: flex;
         flex-wrap: wrap;
-        // justify-content: center;
         align-items: center;
     }
 
@@ -19,14 +16,14 @@
         display: flex;
 
         .nav__column {
-            margin-right: 20px;
+            margin-right: 2rem;
             display: flex;
-            flex: 30%;
+            flex: 20%;
             justify-content: flex-end;
         }
 
         .menu__column {
-            flex: 70%;
+            flex: 80%;
         }
     }
 }

@@ -1,11 +1,11 @@
 .nav {
     border-radius: 10px;
-    background-color: hsl(235, 46%, 20%);
+    background-color: $dark-blue;;
 
     .profile {
         padding: 30px 0px 70px 25px;
         border-radius: 10px;
-        background-color: hsl(246, 80%, 60%);
+        background-color: $primary-blue;
 
         &__img {
             width: 65px;

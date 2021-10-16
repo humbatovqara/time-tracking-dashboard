@@ -4,7 +4,7 @@
     grid-gap: 1rem 2rem;
     color: #fff;
 
-    &__work, &__play,  &__study, &__exercise, &__social, &__selfCare {
+    &__work, &__play,  &__study, &__exercise, &__social, &__selfcare {
         border-radius: 10px;
     }
 
@@ -48,7 +48,7 @@
         }
     }
 
-    &__selfCare {
+    &__selfcare {
         background-color: $soft-orange;
 
         .menu__cover {

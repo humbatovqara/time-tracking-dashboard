@@ -1,70 +1,89 @@
-// Buttonlara klikləmək üçün
-/*
-const listBtns = document.querySelectorAll(".list__link");
+let timeframe = 'weekly';
+const container = document.querySelector(".menu");
+let regularCards;
 
-for (const btn of listBtns) {
-    btn.addEventListener('click', function (e) {
-        if (e.target.textContent === "Daily") {
-            console.log("Daily klikləndi");
-        }
-        if (e.target.textContent === "Weekly") {
-            console.log("Weekly klikləndi");
-        }
-        if (e.target.textContent === "Monthly") {
-            console.log("Monthly klikləndi");
-        }
+// Menu
+const menu = document.querySelectorAll(".list__link");
+
+menu.forEach(element => {
+    element.addEventListener('click', menuOnClick);
+})
+
+// GET JSON Data
+let data = {};
+
+fetch("js/data.json")
+    .then(response => response.json())
+    .then(jsonData => {
+        // Create Card
+        jsonData.forEach(element => {
+            container.insertAdjacentHTML('beforeend', createRegularCard(element, timeframe));
+        });
+
+        //
+        jsonData.forEach(element => {
+            data[element.title] = element.timeframes;
+        });
+
+        regularCards = document.querySelectorAll('.regular-cards');
+    });
+
+
+// Functions
+function menuOnClick(event) {
+    timeframe = event.target.innerText.toLowerCase();
+
+    updateCards(timeframe);
+}
+
+function updateCards(timeframe) {
+    regularCards.forEach(card => {
+        updateCard(card,timeframe);
     })
 }
-*/
 
+function updateCard(card, timeframe) {
+    const title = card.querySelector('.menu__name').innerText;
+    const current = data[title][timeframe]['current'];
+    const previous = data[title][timeframe]['previous'];
 
-// JSON fayldan Data-ları çəkmək üçün - Click
-/*
-const btn = document.querySelectorAll(".list__link")[0].addEventListener("click", getData);
-
-function getData() {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "js/data.json", true);
-
-    xhr.onload = function () {
-        let hours = document.querySelectorAll(".hours")[0];
-
-        if (this.status == 200) {
-            const times = JSON.parse(this.responseText);
-
-            times.forEach(function (time) {
-                console.log(typeof time.title);
-            })
-        }
+    const timeframeMsg = {
+        'daily' : 'Yesterday',
+        'weekly' : 'Last Week',
+        'monthly' : 'Last Month'
     }
-    xhr.send();
+
+    const hoursElement = card.querySelector(".menu__hour");
+    hoursElement.innerText = `${current}hrs`;
+    const msgElement = card.querySelector(".menu__last");
+    msgElement.innerText = `${timeframeMsg[timeframe]} - ${previous}hrs`;
 }
-*/
 
+function createRegularCard(element, timeframe) {
+    let title = element['title'];
+    let current = element['timeframes'][timeframe]['current'];
+    let previous = element['timeframes'][timeframe]['previous'];
 
-// JSON fayldan Data-ları çəkmək üçün - Onload
-document.addEventListener("DOMContentLoaded", getTitle);
-
-function getTitle() {
-    const xhr = new XMLHttpRequest();
-
-    xhr.open("GET", "js/data.json", true);
-
-    xhr.onload = function () {
-        let titles = document.querySelectorAll(".menu__name");
-
-
-        if (this.status == 200) {
-            const times = JSON.parse(this.responseText);
-
-            times.forEach(function (time) {
-                titles.forEach(function (title) {
-                    title.innerHTML = time.title
-                })
-                // titles.innerHTML = time.title;
-            })
-        }
+    const timeframeMsg = {
+        'daily' : 'Yesterday',
+        'weekly' : 'Last Week',
+        'monthly' : 'Last Month'
     }
-    xhr.send();
+
+    return `
+    <div class="regular-cards menu__${title.toLowerCase().replace(/\s/g, '')}">
+        <div class="menu__cover"></div>
+
+        <div class="menu__content">
+            <div class="menu__title">
+                <p class="menu__name">${title}</p>
+                <i><a href="#"><img src="img/icon-ellipsis.svg" alt="Dots" class="menu__icon"></a></i>
+            </div>
+            <div class="menu__body">
+                <p class="menu__hour">${current}hrs</p>
+                <p class="menu__last">${timeframeMsg[timeframe]} - ${previous}hrs</p>
+            </div>
+        </div>
+    </div>
+    `
 }

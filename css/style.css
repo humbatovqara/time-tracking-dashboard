@@ -125,7 +125,7 @@ a {
   color: #fff;
 }
 
-.menu__work, .menu__play, .menu__study, .menu__exercise, .menu__social, .menu__selfCare {
+.menu__work, .menu__play, .menu__study, .menu__exercise, .menu__social, .menu__selfcare {
   border-radius: 10px;
 }
 
@@ -169,11 +169,11 @@ a {
   background-image: url(../img/icon-social.svg);
 }
 
-.menu__selfCare {
+.menu__selfcare {
   background-color: #f1c65b;
 }
 
-.menu__selfCare .menu__cover {
+.menu__selfcare .menu__cover {
   background-image: url(../img/icon-self-care.svg);
 }
 

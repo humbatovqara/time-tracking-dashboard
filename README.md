@@ -19,6 +19,8 @@ Here is a working live demo : https://humbatovqara.github.io/time-tracking-dashb
 ## Technologies
 - HTML5
 - CSS3
+  - Scss
+  - BEM
   - Flexible Box
   - Grid Layout
   - Responsive desing
